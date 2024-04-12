@@ -1,5 +1,4 @@
 using System.Security.Cryptography;
-using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -35,12 +34,10 @@ app.MapGet("", () => {
 
 app.MapGet(settings.RequestPath, getInfo);
 
-var putUrl = $"{settings.RequestPath}/{fileInfo.Name}";
-app.MapPut(putUrl, ([FromBody]FileSaverPut model) => {
+app.MapPut($"{settings.RequestPath}/{fileInfo.Name}", ([FromBody]FileSaverPut model) => {
     var html = System.Text.Encoding.UTF8.GetString(Convert.FromBase64String(model.Content));
     File.WriteAllText(settings.FilePath, html);
     return getInfo();
 });
 
-Console.WriteLine($"Put URL: {putUrl}");
 app.Run();
