@@ -3,7 +3,7 @@ Serve single file TiddlyWiki from local file storage with autosave enabled by si
 # Run the app
 `dotnet run` will make the app available at http://localhost:5115.
 
-Publish the app to a single file: `dotnet publish -r win-x64 -p:PublishSingleFile=true --self-contained true`. From a PowerShell terminal, run `tiddly-filesaver.exe` to access the application at http://localhost:5000/.
+Publish the app to a single file: `dotnet publish -r win-x64 -p:PublishSingleFile=true --self-contained true`. Output other than `tiddly-filesaver.exe` is not required. From a PowerShell terminal, run `tiddly-filesaver.exe` to access the application at http://localhost:5000/.
 
 # Configuration
 Setup GitHub saver in the TiddlyWiki file.
