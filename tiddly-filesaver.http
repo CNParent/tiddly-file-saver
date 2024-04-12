@@ -1,0 +1,6 @@
+@tiddly_filesaver_HostAddress = http://localhost:5115
+
+GET {{tiddly_filesaver_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
